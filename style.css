@@ -1,0 +1,1324 @@
+/* =========================
+   Global Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:#f4f4f4;
+
+    padding:16px;
+
+    gap:16px;
+
+    color:#333;
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+
+
+
+/* =========================
+   Header
+========================= */
+
+
+header {
+
+    padding:20px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(31,78,121,.08);
+
+    width:min(100%,1100px);
+
+    margin:0 auto;
+
+}
+
+
+.logo img {
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+
+
+}
+
+
+header h2 {
+
+    font-weight:normal;
+
+    color:#555;
+
+    margin-top:10px;
+
+}
+
+
+header h1 {
+
+    margin-top:8px;
+
+    color:#1f4e79;
+
+}
+
+
+.subtitle {
+
+    margin-top:10px;
+
+    color:#666;
+
+    max-width:650px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+    line-height:1.5;
+
+    font-size:1.05rem;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Difficulty Screen
+========================= */
+
+
+#difficultyScreen {
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:50;
+
+}
+
+
+
+.difficulty-card {
+
+
+    background:white;
+
+
+    padding:40px;
+
+
+    border-radius:15px;
+
+
+    width:90%;
+
+
+    max-width:450px;
+
+
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+
+
+    animation:levelPop .5s ease;
+
+
+}
+
+
+
+.difficulty-card h2 {
+
+
+    color:#1f4e79;
+
+
+    font-size:2rem;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.difficulty-card p {
+
+
+    color:#666;
+
+
+    margin-bottom:20px;
+
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+.difficultyBtn {
+
+
+    width:100%;
+
+
+    margin:10px 0;
+
+
+    padding:16px;
+
+
+    border:none;
+
+
+    border-radius:10px;
+
+
+    cursor:pointer;
+
+
+    font-size:1rem;
+
+
+    font-weight:bold;
+
+
+    transition:.25s;
+
+
+    box-shadow:0 6px 16px rgba(0,0,0,.12);
+
+
+}
+
+
+
+.difficultyBtn:hover {
+
+
+    transform:scale(1.05);
+
+
+    filter:brightness(1.03);
+
+
+}
+
+
+.difficultyBtn:focus-visible,
+
+button:focus-visible {
+
+    outline:3px solid #1f4e79;
+
+    outline-offset:3px;
+
+}
+
+
+
+
+
+.difficultyBtn.selected {
+
+
+    outline:5px solid #1f4e79;
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+.difficultyBtn[data-difficulty="easy"] {
+
+
+    background:#4CAF50;
+
+
+    color:white;
+
+
+}
+
+
+
+.difficultyBtn[data-difficulty="medium"] {
+
+
+    background:#ff9800;
+
+
+    color:white;
+
+
+}
+
+
+
+.difficultyBtn[data-difficulty="hard"] {
+
+
+    background:#e53935;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+#selectedDifficulty {
+
+
+    margin:20px 0;
+
+
+    color:#1f4e79;
+
+
+}
+
+
+
+
+
+#startBtn {
+
+
+    width:100%;
+
+
+    background:#FFC907;
+
+
+    color:#222;
+
+
+    font-size:1.2rem;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   HUD
+========================= */
+
+
+.hud {
+
+
+    background:#FFC907;
+
+
+    display:flex;
+
+
+    justify-content:space-evenly;
+
+
+    flex-wrap:wrap;
+
+
+    gap:15px;
+
+
+    padding:15px;
+
+    width:min(100%,1100px);
+
+    margin:0 auto;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(31,78,121,.08);
+
+
+}
+
+
+
+.hud-item {
+
+
+    min-width:120px;
+
+
+    padding:6px 10px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.2);
+
+
+}
+
+
+
+.hud-item h3 {
+
+
+    font-size:.9rem;
+
+
+    margin-bottom:5px;
+
+
+}
+
+
+
+.hud-item p {
+
+
+    font-size:1.2rem;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+#difficulty {
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+.easy {
+
+    color:#4CAF50;
+
+}
+
+
+
+.medium {
+
+    color:#ff9800;
+
+}
+
+
+
+.hard {
+
+    color:#e53935;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Progress Bar
+========================= */
+
+
+.progress-section {
+
+
+    padding:15px;
+
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(31,78,121,.08);
+
+    width:min(100%,1100px);
+
+    margin:0 auto;
+
+
+}
+
+
+
+
+#progressBar {
+
+
+    width:80%;
+
+
+    max-width:500px;
+
+
+    height:25px;
+
+
+    margin:10px auto;
+
+
+    background:#ddd;
+
+
+    border-radius:20px;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+#progressFill {
+
+
+    width:0%;
+
+
+    height:100%;
+
+
+    background:linear-gradient(
+        90deg,
+        #2196F3,
+        #4CAF50
+    );
+
+
+    transition:width .3s ease;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Game Area
+========================= */
+
+
+#gameArea {
+
+
+    position:relative;
+
+
+    width:100%;
+
+
+    height:65vh;
+
+
+    overflow:hidden;
+
+
+    background:linear-gradient(
+        to bottom,
+        #dff4ff,
+        #f8f8f8
+    );
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(31,78,121,.08);
+
+    width:min(100%,1100px);
+
+    margin:0 auto;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Player
+========================= */
+
+
+#player {
+
+
+    position:absolute;
+
+
+    bottom:20px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    width:120px;
+
+
+    height:120px;
+
+
+    user-select:none;
+
+
+}
+
+
+
+#player img {
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Falling Objects
+========================= */
+
+
+.object {
+
+
+    position:absolute;
+
+
+    font-size:2rem;
+
+
+    user-select:none;
+
+
+}
+
+
+
+.water {
+
+
+    color:#2196F3;
+
+
+}
+
+
+
+.skull {
+
+
+    color:#e53935;
+
+
+}
+
+
+
+.pill {
+
+
+    color:#9C27B0;
+
+
+}
+
+
+
+.trash {
+
+
+    color:#795548;
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   Footer
+========================= */
+
+
+footer {
+
+
+    background:#FFC907;
+
+
+    padding:15px;
+
+
+    line-height:1.6;
+
+
+    font-weight:bold;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(31,78,121,.08);
+
+    width:min(100%,1100px);
+
+    margin:0 auto;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Effects
+========================= */
+
+
+.flash-red {
+
+
+    animation:flashRed .4s;
+
+
+}
+
+
+
+.glow {
+
+
+    animation:glow .5s;
+
+
+}
+
+
+
+@keyframes flashRed {
+
+
+    0% {
+
+        background:rgba(255,0,0,.4);
+
+    }
+
+
+    100% {
+
+        background:transparent;
+
+    }
+
+}
+
+
+
+@keyframes glow {
+
+
+    0% {
+
+        filter:drop-shadow(
+            0 0 15px yellow
+        );
+
+    }
+
+
+    100% {
+
+        filter:none;
+
+    }
+
+}
+
+
+
+
+.score-popup {
+
+
+    position:absolute;
+
+
+    color:#1976D2;
+
+
+    font-weight:bold;
+
+
+    font-size:1.2rem;
+
+
+    animation:floatUp .8s forwards;
+
+
+}
+
+
+
+
+@keyframes floatUp {
+
+
+    from {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+    to {
+
+        opacity:0;
+
+        transform:translateY(-35px);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Game Over
+========================= */
+
+
+#gameOverScreen {
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:rgba(0,0,0,.75);
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    z-index:20;
+
+
+}
+
+
+
+.game-over-card {
+
+
+    background:white;
+
+
+    color:#333;
+
+
+    padding:35px;
+
+
+    border-radius:15px;
+
+
+    width:90%;
+
+
+    max-width:400px;
+
+
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+
+
+}
+
+
+
+#finalScore {
+
+
+    margin-bottom:25px;
+
+
+    font-size:1.2rem;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Level Transition
+========================= */
+
+
+#levelScreen {
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:rgba(0,0,0,.75);
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    z-index:15;
+
+
+}
+
+
+
+.level-card {
+
+
+    background:white;
+
+
+    padding:40px;
+
+
+    border-radius:15px;
+
+
+    width:90%;
+
+
+    max-width:420px;
+
+
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+
+
+    animation:levelPop .5s ease;
+
+
+}
+
+
+
+.level-card h2 {
+
+
+    color:#1f4e79;
+
+
+    margin-bottom:25px;
+
+
+    font-size:2rem;
+
+
+}
+
+
+
+
+
+@keyframes levelPop {
+
+
+    from {
+
+        transform:scale(.6);
+
+        opacity:0;
+
+    }
+
+
+    to {
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Buttons
+========================= */
+
+
+button {
+
+
+    background:#FFC907;
+
+
+    border:none;
+
+
+    padding:14px 35px;
+
+
+    font-size:1rem;
+
+
+    border-radius:10px;
+
+
+    cursor:pointer;
+
+
+    transition:.25s;
+
+
+}
+
+
+
+button:hover {
+
+
+    background:#f5b700;
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+#continueBtn {
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Hidden
+========================= */
+
+
+.hidden {
+
+
+    display:none !important;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Responsive
+========================= */
+
+
+@media(max-width:768px){
+
+
+    body {
+
+        padding:10px;
+
+        gap:12px;
+
+    }
+
+
+    .hud {
+
+        font-size:.9rem;
+
+    }
+
+
+    .hud-item {
+
+        min-width:90px;
+
+    }
+
+
+    header,
+
+    .hud,
+
+    .progress-section,
+
+    #gameArea,
+
+    footer {
+
+        width:100%;
+
+    }
+
+
+    #player {
+
+        width:98px;
+
+        height:98px;
+
+    }
+
+
+    #progressBar {
+
+        width:90%;
+
+    }
+
+
+    footer {
+
+        font-size:.9rem;
+
+    }
+
+
+    .difficulty-card {
+
+        padding:25px;
+
+    }
+
+
+}
+
+
+
+@media(min-width:1200px){
+
+
+    header,
+
+    .hud,
+
+    .progress-section,
+
+    #gameArea,
+
+    footer {
+
+        width:min(100%,1300px);
+
+    }
+
+
+    #gameArea {
+
+        height:72vh;
+
+    }
+
+
+    #progressBar {
+
+        width:70%;
+
+    }
+
+}
+
+
+
+@media(max-width:1440px) and (min-width:769px){
+
+
+    body {
+
+        padding:12px;
+
+        gap:12px;
+
+    }
+
+
+    header,
+
+    .hud,
+
+    .progress-section,
+
+    #gameArea,
+
+    footer {
+
+        width:min(100%,1180px);
+
+    }
+
+
+    header {
+
+        padding:16px;
+
+    }
+
+
+    .hud,
+
+    .progress-section,
+
+    footer {
+
+        padding:12px;
+
+    }
+
+
+    #gameArea {
+
+        height:56vh;
+
+    }
+
+
+    #progressBar {
+
+        width:85%;
+
+    }
+
+}

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Water Dash</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= DIFFICULTY SELECT ================= -->
+
+<div id="difficultyScreen">
+
+
+    <div class="difficulty-card">
+
+
+        <h2>
+            Select Difficulty
+        </h2>
+
+
+        <p>
+            Choose how challenging you want your clean water mission to be.
+        </p>
+
+
+        <button 
+            class="difficultyBtn" 
+            data-difficulty="easy">
+
+            🟢 Easy
+
+            <br>
+
+            More water • Less pollution
+
+        </button>
+
+
+
+
+        <button 
+            class="difficultyBtn" 
+            data-difficulty="medium">
+
+            🟡 Medium
+
+            <br>
+
+            Balanced challenge
+
+        </button>
+
+
+
+
+        <button 
+            class="difficultyBtn" 
+            data-difficulty="hard">
+
+            🔴 Hard
+
+            <br>
+
+            Faster pollution • Less time
+
+        </button>
+
+
+
+        <h3 id="selectedDifficulty">
+
+            Difficulty: None
+
+        </h3>
+
+
+
+        <button id="startBtn">
+
+            Start Game
+
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= HEADER ================= -->
+
+
+<header>
+
+
+    <div class="logo">
+
+
+        <img 
+        src="img/logo.png" 
+        alt="Jerrycan logo">
+
+
+    </div>
+
+
+
+    <h2>
+        charity: water
+    </h2>
+
+
+
+    <h1>
+        Water Dash
+    </h1>
+
+
+
+    <p class="subtitle">
+
+
+        Catch clean water, avoid pollution,
+        and help deliver safe water to communities.
+
+
+    </p>
+
+
+</header>
+
+
+
+
+
+
+
+<!-- ================= HUD ================= -->
+
+
+<section class="hud">
+
+
+    <div class="hud-item">
+
+        <h3>
+            Water
+        </h3>
+
+
+        <p id="score">
+
+            0 Liters
+
+        </p>
+
+    </div>
+
+
+
+
+
+    <div class="hud-item">
+
+        <h3>
+            Level
+        </h3>
+
+
+        <p id="level">
+
+            1
+
+        </p>
+
+    </div>
+
+
+
+
+
+    <div class="hud-item">
+
+        <h3>
+            Goal
+        </h3>
+
+
+        <p id="levelGoal">
+
+            15 Liters
+
+        </p>
+
+    </div>
+
+
+
+
+
+    <div class="hud-item">
+
+        <h3>
+            Difficulty
+        </h3>
+
+
+        <p id="difficulty">
+
+            Easy
+
+        </p>
+
+    </div>
+
+
+
+
+
+    <div class="hud-item">
+
+        <h3>
+            Pollution
+        </h3>
+
+
+        <p id="pollution">
+
+            0 / 3
+
+        </p>
+
+    </div>
+
+
+
+
+
+    <div class="hud-item">
+
+        <h3>
+            Timer
+        </h3>
+
+
+        <p id="timer">
+
+            30s
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= WATER PROGRESS ================= -->
+
+
+<section class="progress-section">
+
+
+    <h3>
+        Jerrycan Fill Level
+    </h3>
+
+
+
+    <div id="progressBar">
+
+
+        <div id="progressFill"></div>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= GAME AREA ================= -->
+
+
+<main 
+id="gameArea"
+aria-label="Water Dash game area">
+
+
+    <div id="player">
+
+
+        <img 
+        src="img/jerrycan-svgrepo-com.svg" 
+        alt="Jerrycan">
+
+
+    </div>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- ================= CONTROLS ================= -->
+
+
+<footer>
+
+
+    <p>
+
+        💧 Catch water
+
+        • ☠️ Avoid pollution
+
+        • 💊 Clean water
+
+        • 🗑️ Avoid trash
+
+    </p>
+
+
+
+
+    <p>
+
+        Drag your mouse or move your finger
+        to control the jerrycan.
+
+    </p>
+
+
+
+
+    <button id="resetBtn">
+
+        Reset Game
+
+    </button>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- ================= LEVEL TRANSITION ================= -->
+
+
+<div id="levelScreen" class="hidden">
+
+
+    <div class="level-card">
+
+
+        <h2 id="levelMessage"></h2>
+
+
+        <button id="continueBtn">
+
+            Continue
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ================= GAME OVER ================= -->
+
+
+<div id="gameOverScreen" class="hidden">
+
+
+    <div class="game-over-card">
+
+
+        <h2 id="gameMessage"></h2>
+
+
+        <p id="finalScore"></p>
+
+
+        <button id="retryBtn">
+
+            Play Again
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
