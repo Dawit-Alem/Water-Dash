@@ -2,6 +2,11 @@
    Global Styles
 ========================= */
 
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -365,6 +370,102 @@ button:focus-visible {
 
     font-weight:bold;
 
+
+}
+
+@media (max-width: 768px) {
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* HERO */
+    header {
+        flex: 0 0 auto;
+        padding: 5px;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    header h2 {
+        font-size: .8rem;
+        margin: 2px;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+        margin: 2px;
+    }
+
+    .subtitle {
+        display: none;
+    }
+
+
+
+    /* HUD */
+    .hud {
+        flex: 0 0 auto;
+        padding: 5px;
+        gap: 2px;
+    }
+
+    .hud-item {
+        min-width: 60px;
+    }
+
+    .hud-item h3 {
+        font-size: .65rem;
+    }
+
+    .hud-item p {
+        font-size: .8rem;
+    }
+
+
+
+    /* PROGRESS */
+    .progress-section {
+        flex: 0 0 auto;
+        padding: 5px;
+    }
+
+    .progress-section h3 {
+        font-size: .8rem;
+    }
+
+    #progressBar {
+        height: 15px;
+        margin: 5px auto;
+    }
+
+
+
+    /* GAME AREA */
+    #gameArea {
+        flex: 1;
+        height: auto;
+        min-height: 0;
+    }
+
+
+
+    /* FOOTER */
+    footer {
+        flex: 0 0 auto;
+        padding: 5px;
+        font-size: .7rem;
+    }
+
+    footer p:nth-child(2) {
+        display:none;
+    }
 
 }
 
